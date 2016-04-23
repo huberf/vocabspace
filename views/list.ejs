@@ -8,7 +8,7 @@
     <link rel='stylesheet' type='text/css' href='/css/material.css' >
     <link rel='stylesheet' type='text/css' href='/css/form.css' >
     <style>
-.form-center>ul>li>button {
+.form-center>ul>li>a>button {
   background: #448aff;
   color: white;
   border-style: none;
@@ -22,7 +22,7 @@
 		<div class='form-center shadow primary'>
       <ul>
         <% for(var i = 0; i < levels.length; i++) { %>
-        <li><%= levels[i][0] %> <button>Test</button><button>Practice</button></li>
+        <li><%= levels[i][0] %> <a href="/test"><button>Test</button></a><a href="/word"><button>Study</button></a></li>
 				<div style='height: 10px;'></div>
         <% } %>
       </ul>
