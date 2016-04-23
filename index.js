@@ -89,7 +89,7 @@ app.get('/test', function(req, res) {
 
 //Only access once!!!!
 app.get('/setup', function(req, res) {
-  var newGeneral = new General({'latestLevel': 0, 'masterPass', process.env.MASTER_KEY});
+  var newGeneral = new General({'latestLevel': 0, 'masterPass': process.env.MASTER_KEY});
   newGeneral.save();
   res.send('Setup is complete.');
 });
