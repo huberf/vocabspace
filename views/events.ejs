@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+  <% include ./_header.ejs %>
+
+  <style type='text/css'>
+.buy-button {
+  width: 100%;
+}
+  </style>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+						<header>
+							<div class="inner">
+								<h2>Tickets</h2>
+								<p>Here is a full list of the tickets and events</p>
+							</div>
+						</header>
+
+						<!-- Content -->
+							<div class="wrapper">
+								<div class="inner">
+
+									<section class="features">
+                    <% if ( events.length > 0 ) { %>
+                    <% for(i = 0; i < events.length; i++) { %>
+										<article>
+                      <a href="#" class="image"><img src="<%= events[i][3] %>" alt="" /></a>
+                      <h3 class="major"><%= events[i][0] %></h3>
+                      <p><%= events[i][1] %></p>
+                      <a href="<%= events[i][2] %>" class=""><img class='buy-button'  src='images/Eventbrite-Button.png' /></a>
+										</article>
+                    <% } %>
+                    <% } else { %>
+                    <h3>There are no events listed yet. We are excited to add some as we finalize plans with our incredible lineup of speakers.</h3>
+                    <% } %>
+                    <!--
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">Party on 5th Street</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+                      <a href="#" class=""><img class='buy-button'  src='images/Eventbrite-Button.png' /></a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">Party on 5th Street</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+                      <a href="#" class=""><img class='buy-button'  src='images/Eventbrite-Button.png' /></a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">Party on 5th Street</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+                      <a href="#" class=""><img class='buy-button'  src='images/Eventbrite-Button.png' /></a>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<h3 class="major">Party on 5th Street</h3>
+											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+                      <a href="#" class=""><img class='buy-button'  src='images/Eventbrite-Button.png' /></a>
+										</article>
+                    -->
+									</section>
+
+								</div>
+							</div>
+
+					</section>
+
+          <% include ./_footer.ejs %>
+	</body>
+</html>
