@@ -70,6 +70,12 @@ app.get('/login', function(req, res) {
   res.render('login', {'reason': 'none'});
 });
 
+app.get('/list', function(req, res) {
+  var data = {
+    'levels': ['Level 1', 'Level 2', 'Level 3', 'Level 4']
+  };
+  res.render('list', data);
+});
 
 app.get('/word', function(req, res) {
   res.render('word', {'root': 'bell', 'rootdef': 'war', 'word': 'bellicose', 'worddef': 'demonstrating aggression and willingness to fight', 'level': 3});

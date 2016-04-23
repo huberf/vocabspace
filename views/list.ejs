@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <title>WordSpace Word</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css' >
+    <link rel="stylesheet" type="text/css" href="/css/grid.css" >
+    <link rel='stylesheet' type='text/css' href='/css/material.css' >
+    <link rel='stylesheet' type='text/css' href='/css/form.css' >
+	</head>
+	<body>
+	<div class='form-center-container'>
+		<div class='form-center shadow primary'>
+      <ul>
+        <% for(var i = 0; i < levels.length; i++) { %>
+        <li><%= levels[i][0] %> <button>Test</button><button>Practice</button></li>
+        <% } %>
+      </ul>
+		</div>
+	</div>
+	</body>
+</html>
