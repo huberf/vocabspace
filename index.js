@@ -16,12 +16,22 @@ var mongoose = require('mongoose');
 var db = mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds029793.mlab.com:29793/vocab');
 
 var userScheam = mongoose.Schema({
+  username: String,
+  pass: String
 });
 var User = mongoose.model('User', userSchema);
 
 var wordsSchema = mongoose.Schema({
+  level: Number,
+  words: Array
 });
 var Words = mongoose.model('Words', wordsSchema);
+
+var generalSchema = mongoose.Schema({
+  latestLevel: Number,
+  masterPass: String
+});
+var General = mongoose.model('General', generalSchema);
 
 //Setting up email
 var smtpTransport = nodemailer.createTransport("SMTP", {
