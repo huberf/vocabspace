@@ -66,33 +66,9 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.get('/about', function(req, res) {
-	res.render('about');
-});
-
-app.get('/events', function(req, res) {
-	res.render('events', {events: eventList});
-});
-
-app.get('/sponsors', function(req, res) {
-	res.render('sponsors');
-});
-
-app.get('/info', function(req, res) {
-  res.render('info');
-});
-
-app.get('/lineup', function(req, res) {
-  res.render('lineup');
-});
-
-app.get('/elements', function(req, res) {
-	res.render('elements');
-});
-
 app.post('/contact', function( req, res) {
 	var mailOptions = {
-		from: "TimeOut Contact <racond11@yahoo.com>",
+		from: "Vocab Space Emailer <racond11@yahoo.com>",
 		to: "nhuberfeely@gmail.com",
 		subject: "New Message from Website",
 		text: "Name: " + req.body.name + "\n" + "Email: " + req.body.email + "\n" + "Message: " + req.body.message
