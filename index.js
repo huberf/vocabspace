@@ -17,7 +17,9 @@ var db = mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env
 
 var userSchema = mongoose.Schema({
   username: String,
-  pass: String
+  pass: String,
+  levels: Array,
+  mastery: Array
 });
 var User = mongoose.model('User', userSchema);
 
@@ -83,6 +85,13 @@ app.get('/word', function(req, res) {
 
 app.get('/test', function(req, res) {
   res.render('test', {'root': 'bell', 'word': 'bellicose'});
+});
+
+//Only access once!!!!
+app.get('/setup', function(req, res) {
+  var newGeneral = new General({'latestLevel': 0, 'masterPass', process.env.MASTER_KEY});
+  newGeneral.save();
+  res.send('Setup is complete.');
 });
 
 app.post('/contact', function( req, res) {
