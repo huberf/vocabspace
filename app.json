@@ -1,7 +1,7 @@
 {
   "name": "Vocab Test",
   "description": "A site for learning new vocab",
-  "repository": "https://github.com/heroku/node-js-getting-started",
+  "repository": "https://github.com/huberf/vocabspace",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
   "keywords": ["node", "express", "static"]
 }

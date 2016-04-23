@@ -1,6 +1,7 @@
 {
-  "name": "vocab=test",
+  "name": "vocab-test",
   "version": "0.1.4",
+  "repository": "https://github.com/huberf/vocabspace",
   "description": "A simple vocab app to test your abilities",
   "main": "index.js",
   "scripts": {
