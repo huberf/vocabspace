@@ -72,7 +72,7 @@ app.get('/login', function(req, res) {
 
 app.get('/list', function(req, res) {
   var data = {
-    'levels': ['Level 1', 'Level 2', 'Level 3', 'Level 4']
+    'levels': [['Level 1'], ['Level 2'], ['Level 3'], ['Level 4']]
   };
   res.render('list', data);
 });
