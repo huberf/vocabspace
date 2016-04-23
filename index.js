@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 
 var db = mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds029793.mlab.com:29793/vocab');
 
-var userScheam = mongoose.Schema({
+var userSchema = mongoose.Schema({
   username: String,
   pass: String
 });
