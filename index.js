@@ -75,6 +75,10 @@ app.get('/word', function(req, res) {
   res.render('word', {'root': 'bell', 'rootdef': 'war', 'word': 'bellicose', 'worddef': 'demonstrating aggression and willingness to fight', 'level': 3});
 });
 
+app.get('/test', function(req, res) {
+  res.render('test', {'root': 'bell', 'word': 'bellicose'});
+});
+
 app.post('/contact', function( req, res) {
 	var mailOptions = {
 		from: "Vocab Space Emailer <racond11@yahoo.com>",
