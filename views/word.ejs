@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+    <title>WordSpace Word</title>
+    <link rel='stylesheet' type='text/css' href='/css/style.css' >
+    <link rel="stylesheet" type="text/css" href="/css/grid.css" >
+    <link rel='stylesheet' type='text/css' href='/css/material.css' >
+    <link rel='stylesheet' type='text/css' href='/css/form.css' >
+	</head>
+	<body>
+	<div class='form-center-container'>
+		<div class='form-center shadow primary'>
+			<form id='login-form' class='form' method='GET' action='/word'>
+				<div style='height: 10px;'></div>
+        <h4>Root: <%= root %></h4>
+        <p>Root def: <%= rootdef %></p>
+				<div style='height: 10px;'></div>
+        <h4>Word: <%= word %></h4>
+        <p>Def: <%= worddef %></p>
+				<h4 style='text-align: center;'><button class='shadow'>Next</button></h4>
+        <p>Level: <%= level %></p>
+		</div>
+	</div>
+	</body>
+</html>
