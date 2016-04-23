@@ -10,20 +10,25 @@ var io = require('socket.io')(http);
 
 app.http().io()
 
-//Eventbrite ALL THE THINGS!
-var Eventbrite = require('eventbrite-node');
-var client = new Eventbrite('GGNFHDHYZYIPWBQV52', 'VYJYQSPUVMDZNC4RVDSOLR25UWTMDKQBEBDWCWRIHAMTZZLUCK');
 
-client.setAccessToken('VXEBM3XN6P3QY5HAYW7Z');
+var mongoose = require('mongoose');
 
-var eventList =  []; //[['Hello World', 'Want to learn to code?', '#', 'images/pic04.jpg']];
+var db = mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@ds029793.mlab.com:29793/vocab');
+
+var userScheam = mongoose.Schema({
+});
+var User = mongoose.model('User', userSchema);
+
+var wordsSchema = mongoose.Schema({
+});
+var Words = mongoose.model('Words', wordsSchema);
 
 //Setting up email
 var smtpTransport = nodemailer.createTransport("SMTP", {
         service: "Yahoo",
         auth: {
-                user: "racond11@yahoo.com",
-                pass: "racoon11"
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
         }
 });
 
@@ -40,7 +45,7 @@ app.use( bodyParser.json());
 app.use(cookieParser());
 
 //Setting up session handling
-app.use(session({secret: 't4gd0m1n4t10n'}));
+app.use(session({secret: process.env.SESSION_PASS}));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
@@ -78,7 +83,7 @@ app.get('/elements', function(req, res) {
 app.post('/contact', function( req, res) {
 	var mailOptions = {
 		from: "TimeOut Contact <racond11@yahoo.com>",
-		to: "bamakick@gmail.com",
+		to: "nhuberfeely@gmail.com",
 		subject: "New Message from Website",
 		text: "Name: " + req.body.name + "\n" + "Email: " + req.body.email + "\n" + "Message: " + req.body.message
 	}
@@ -91,33 +96,6 @@ app.post('/contact', function( req, res) {
 		smtpTransport.close();
 	});
 	res.redirect('/');
-});
-
-app.get('/eve', function(req, res) {
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log(client.get);
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    console.log("GETTING EVE DATA");
-    client.get('/users/me', function(err, response) {
-    console.log("HELLO WORLD YOU FOOL!");
-    if(err) {
-      console.error(err);
-      return;
-    }
-    console.log(response);
-  });
-  res.send("WAT?");
 });
 
 http.listen(app.get('port'), function() {
